@@ -6,7 +6,7 @@ function redirect($url) {
 }
 
 function sanitize($data) {
-    return htmlspecian_chars(strip_tags(trim($data)), ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars(strip_tags(trim($data)), ENT_QUOTES, 'UTF-8');
 }
 
 function generateToken($length = 32) {
