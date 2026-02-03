@@ -1,0 +1,132 @@
+═══════════════════════════════════════════════════════════════
+   ECUASIST-2026 v1.0 - INSTRUCCIONES DE INSTALACIÓN
+═══════════════════════════════════════════════════════════════
+
+PASO 1: REQUISITOS
+------------------
+✓ XAMPP (o similar) con PHP 7.4+ y MySQL 5.7+
+✓ Navegador web moderno (Chrome, Firefox, Edge)
+✓ Editor de texto (opcional, para configuración)
+
+PASO 2: INSTALACIÓN
+-------------------
+1. Extraer el archivo ecuasist-2026.tar.gz en la carpeta htdocs de XAMPP
+   Ubicación típica: C:\xampp\htdocs\
+
+2. Iniciar Apache y MySQL desde el Panel de Control de XAMPP
+
+3. Abrir phpMyAdmin en: http://localhost/phpmyadmin
+
+4. Crear la base de datos:
+   - Click en "Nueva" (New)
+   - Importar el archivo: database/ecuasist_2026.sql
+   - Click en "Continuar" (Go)
+
+PASO 3: CONFIGURACIÓN
+--------------------
+1. Abrir el archivo: config/database.php
+   
+   Verificar/ajustar estos valores:
+   DB_HOST = 'localhost'
+   DB_NAME = 'ecuasist_2026'
+   DB_USER = 'root'
+   DB_PASS = ''  (dejar vacío si no tienes contraseña en MySQL)
+
+2. Abrir el archivo: config/config.php
+   
+   Ajustar BASE_URL según tu instalación:
+   - Si está en raíz: 'http://localhost/ecuasist-2026/'
+   - Si está en subcarpeta: 'http://localhost/carpeta/ecuasist-2026/'
+
+PASO 4: ACCESO AL SISTEMA
+-------------------------
+1. Abrir navegador web
+
+2. Ir a: http://localhost/ecuasist-2026/
+
+3. Credenciales iniciales:
+   Usuario: admin
+   Contraseña: password
+
+4. IMPORTANTE: Cambiar la contraseña del administrador después del primer acceso
+
+PASO 5: CONFIGURACIÓN INICIAL
+-----------------------------
+1. Ingresar como administrador
+
+2. Crear año lectivo activo (si no existe)
+
+3. Crear cursos para el año lectivo
+
+4. Crear asignaturas
+
+5. Registrar usuarios (docentes, estudiantes, etc.)
+
+6. Asignar roles a los usuarios creados
+
+7. Asignar docentes a asignaturas y cursos
+
+8. Matricular estudiantes en cursos
+
+SOLUCIÓN DE PROBLEMAS COMUNES
+------------------------------
+
+Problema: "Error de conexión"
+Solución: Verificar que MySQL esté iniciado en XAMPP
+          Verificar credenciales en config/database.php
+
+Problema: Página en blanco
+Solución: Activar display_errors en config/config.php
+          Revisar logs de error de Apache
+
+Problema: No carga CSS/JS
+Solución: Verificar que BASE_URL esté correctamente configurado
+          Limpiar caché del navegador (Ctrl + F5)
+
+Problema: Email de recuperación no funciona
+Solución: Configurar SMTP en config/config.php
+          O usar un servicio de email local para desarrollo
+
+FUNCIONES PRINCIPALES
+---------------------
+✓ Registro e inicio de sesión de usuarios
+✓ Gestión de roles múltiples por usuario
+✓ Registro de asistencia por hora-clase
+✓ Consulta de asistencia
+✓ Generación de reportes (PDF y Excel)
+✓ Gestión de usuarios y roles (para autoridades)
+
+ROLES DEL SISTEMA
+-----------------
+- Docente: Puede registrar asistencia de sus estudiantes
+- Estudiante: Puede ver su propia asistencia
+- Inspector: Supervisión general
+- Autoridad: Gestión completa del sistema
+- Representante: Acceso a información de sus representados
+
+DATOS DE PRUEBA
+---------------
+El sistema incluye:
+- 1 institución educativa de ejemplo
+- 5 roles predefinidos
+- 3 jornadas (Matutina, Vespertina, Nocturna)
+- 1 usuario administrador
+
+PRÓXIMOS PASOS DESPUÉS DE LA INSTALACIÓN
+----------------------------------------
+1. Personalizar información de la institución
+2. Crear estructura académica (años, cursos, asignaturas)
+3. Registrar usuarios del sistema
+4. Asignar roles correspondientes
+5. Configurar asignaciones docente-curso-asignatura
+6. Matricular estudiantes
+
+SOPORTE Y DOCUMENTACIÓN
+-----------------------
+Para más información, consultar README.md
+
+═══════════════════════════════════════════════════════════════
+Sistema desarrollado siguiendo estándares PHP POO
+Sin frameworks - Compatible con hosting compartido
+Version 1.0 - Febrero 2026
+═══════════════════════════════════════════════════════════════
